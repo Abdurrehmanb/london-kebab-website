@@ -391,7 +391,7 @@ const BUSINESS_INFO = {
   maps: "https://www.google.com/maps/search/?api=1&query=London+Kebab+Avda.+Levante+14+Jumilla",
 };
 
-const MENU_PDF_URL = "/menu/London_Kebab_Menu.pdf";
+const MENU_PDF_URL = "/London_Kebab_Menu.pdf";
 
 // Reusable continuous culinary SVG divider
 function CulinaryDivider() {
@@ -463,13 +463,13 @@ function ResponsiveImage({
 
   const src =
     isNetlify && !useRaw
-      ? `/.netlify/images?url=/img/${name}&w=1000&fm=webp&q=85`
-      : `/img/${name}`;
+      ? `/.netlify/images?url=/${name}&w=1000&fm=webp&q=85`
+      : `/${name}`;
 
   const srcSet =
     isNetlify && !useRaw
       ? [480, 800, 1200, 1600]
-          .map((w) => `/.netlify/images?url=/img/${name}&w=${w}&fm=webp&q=85 ${w}w`)
+          .map((w) => `/.netlify/images?url=/${name}&w=${w}&fm=webp&q=85 ${w}w`)
           .join(", ")
       : undefined;
 
@@ -794,13 +794,13 @@ function CinemaSection() {
     <section className="cinema" aria-label="From dough to fire">
       <video
         ref={videoRef}
-        src="/video/from-dough-to-fire.mp4"
+        src="/from-dough-to-fire.mp4"
         autoPlay
         muted
         loop
         playsInline
         preload="auto"
-        poster="/img/video-poster.webp"
+        poster="/video-poster.webp"
         aria-hidden="true"
         onError={() => setVideoError(true)}
         style={{ visibility: videoError ? "hidden" : undefined }}
@@ -925,7 +925,7 @@ export default function App() {
       <header className="header">
         <div className="header-inner">
           <a className="brand" href="#" aria-label="London Kebab & Pizzeria, inicio">
-            <img src="/img/logo.png" width={144} height={96} alt="London Kebab & Pizzeria" />
+            <img src="/logo.png" width={144} height={96} alt="London Kebab & Pizzeria" />
           </a>
 
           <nav className="desktop-nav" aria-label="Navegación principal">
@@ -1440,7 +1440,7 @@ export default function App() {
               aria-label="London Kebab & Pizzeria, inicio"
             >
               <img
-                src="/img/logo.png"
+                src="/logo.png"
                 width={108}
                 height={72}
                 alt="London Kebab & Pizzeria"
